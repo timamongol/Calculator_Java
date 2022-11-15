@@ -66,7 +66,7 @@ public class Calculator {
             if (Action(a, act, b) > 0) {
                 System.out.println(ConvertIntoRoman(Action(a, act, b)));
             } else {
-                throw new IOException("hимских чисел меньше единицы не существует!");
+                throw new IOException("Римских чисел меньше единицы не существует!");
             }
         }
 
@@ -122,7 +122,8 @@ public class Calculator {
                 RomanNum.append("D");
             }
             if (arabNum >= 400 && arabNum < 500){
-                RomanNum.append("CV");
+                arabNum -= 400;
+                RomanNum.append("CD");
             }
             while (arabNum >= RomeNums.C.getValue()){
                 arabNum -= 100;
@@ -137,6 +138,7 @@ public class Calculator {
                 RomanNum.append("L");
             }
             if (arabNum >= 40 && arabNum < 50){
+                arabNum -= 40;
                 RomanNum.append("XL");
             }
             while (arabNum >= RomeNums.X.getValue()){
